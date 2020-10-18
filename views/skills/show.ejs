@@ -1,0 +1,15 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/nav.ejs %>
+
+    <h1>Skill: <%= skill.type %></h1>
+    <h3>Aquired: <%= skill.aquired ? 'YES' : 'NOT YET' %></h3>
+
+    <a href="/skills">
+        <form action="/skills/<%= skill.id %>?_method=DELETE"
+        class="delete-form" method="POST">
+        <button type="submit">DELETE SKILL</button>
+      </form>
+    </a>
+
+    <%- include ../partials/header.ejs %>
