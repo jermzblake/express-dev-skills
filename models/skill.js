@@ -14,7 +14,8 @@ module.exports = {
     getAll,
     getOne,
     create,
-    deleteOne
+    deleteOne,
+    update
 };
 
 function getAll() {
@@ -37,4 +38,10 @@ function deleteOne(id) {
      // Find the index based on the id of the skill object
   const idx = skills.findIndex(skill => skill.id === parseInt(id));
   skills.splice(idx, 1);
+}
+
+function update(id, skill) {
+    const idx = skills.findIndex(skill => skill.id === parseInt(id));
+    skill.type = skill
+    skill.id = idx
 }

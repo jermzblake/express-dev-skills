@@ -1,4 +1,5 @@
 var express = require('express');
+const { route } = require('.');
 var router = express.Router();
 const skillsCtrl = require('../controllers/skills')
 
@@ -6,7 +7,9 @@ const skillsCtrl = require('../controllers/skills')
 router.get('/', skillsCtrl.index);
 router.post('/', skillsCtrl.create);
 router.get('/new', skillsCtrl.new)
+router.get('/edit', skillsCtrl.edit);
 router.get('/:id', skillsCtrl.show);
-router.delete('/:id', skillsCtrl.delete)
+router.delete('/:id', skillsCtrl.delete);
+router.put('/', skillsCtrl.update);
 
 module.exports = router;
