@@ -36,8 +36,8 @@ function edit(req, res, next) {
 
 function update(req, res, next) {
     console.log(req.body);
-    Skill.update(req.body)
-    res.redirect('/skills/')
+    Skill.update(req.body.type)
+    res.redirect('/skills')
 }
 
 module.exports = {

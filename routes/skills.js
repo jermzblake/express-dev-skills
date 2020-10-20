@@ -10,6 +10,6 @@ router.get('/new', skillsCtrl.new)
 router.get('/:id/edit', skillsCtrl.edit);
 router.get('/:id', skillsCtrl.show);
 router.delete('/:id', skillsCtrl.delete);
-router.put('/', skillsCtrl.update);
+router.put('/:id', skillsCtrl.update);
 
 module.exports = router;

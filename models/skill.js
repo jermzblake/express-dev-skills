@@ -1,13 +1,13 @@
 const skills = [
-    {id: 1001, type: "HTML", aquired: true},
-    {id: 2002, type: "CSS", aquired: true},
-    {id: 3003, type: "JavaScript", aquired: true},
-    {id: 4004, type: "Node.js", aquired: true},
-    {id: 5005, type: "Express", aquired: true},
-    {id: 6006, type: "MongoDB", aquired: false},
-    {id: 7007, type: "React", aquired: false},
-    {id: 8008, type: "Python", aquired: false},
-    {id: 9009, type: "Django", aquired: false},
+    {id: 1001, type: "HTML", acquired: true},
+    {id: 2002, type: "CSS", acquired: true},
+    {id: 3003, type: "JavaScript", acquired: true},
+    {id: 4004, type: "Node.js", acquired: true},
+    {id: 5005, type: "Express", acquired: true},
+    {id: 6006, type: "MongoDB", acquired: false},
+    {id: 7007, type: "React", acquired: false},
+    {id: 8008, type: "Python", acquired: false},
+    {id: 9009, type: "Django", acquired: false},
 ]
 
 module.exports = {
@@ -30,7 +30,7 @@ function create(skill){
     //add the id
     skill.id = Date.now() % 1000000;
     //New skill likely won't already be done
-    skill.aquired = false;
+    skill.acquired = false;
     skills.push(skill); 
 }
 
@@ -40,8 +40,8 @@ function deleteOne(id) {
   skills.splice(idx, 1);
 }
 
+//can't figure out how to get this function to work as intended
 function update(id, skill) {
     const idx = skills.findIndex(skill => skill.id === parseInt(id));
-    skill.type = skill
-    skill.id = idx
+    skills[idx] = skill
 }
